@@ -9,4 +9,5 @@ document.addEventListener("DOMContentLoaded", () => {
     new Information();
 });
 
+//set the home tab as the default tab
 setTab("home");
