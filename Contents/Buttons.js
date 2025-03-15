@@ -32,15 +32,19 @@ export function setTab(openedTab) {
     infoTab.style.display = "none";
 
     //set the selected tab visible
+    const openedIconTab = document.getElementById("opened-icon-tab");
     switch (openedTab) {
         case "home":
             homeTab.style.display = "flex";
+            openedIconTab.style.display = "none";
             break;
         case "guide":
             guideTab.style.display = "flex";
+            openedIconTab.style.display = "block";
             break;
         case "information":
             infoTab.style.display = "flex";
+            openedIconTab.style.display = "block";
             break;
         default:
             break;
