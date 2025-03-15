@@ -3,6 +3,7 @@ import { iconTexts } from "./IconContents.js";
 //find all the icons with class icon
 const icons = document.querySelectorAll(".main-icon");
 const openedIconTab = document.getElementById("opened-icon-tab");
+const allSubIcons = document.querySelectorAll(".sub-icon");
 
 let currentActiveIcon = 0;
 
@@ -14,7 +15,7 @@ class IconManager {
         
         this.addClickEvent();
     }
-
+    
     addClickEvent() {
         //loop through all icons and add click event
         for (let i = 0; i < icons.length; i++) {
@@ -22,10 +23,17 @@ class IconManager {
                 //console.log("clicked icon-" + i);
                 currentActiveIcon = i;
                 makeInactiveInvisible(i);
-                changeIconContent();
+                //changeIconContent();
             })
         }
-        //default visible sub-icons
+
+        for (let i = 0; i < allSubIcons.length; i++) {
+            allSubIcons[i].addEventListener('click', () => {
+                
+                changeIconContent(allSubIcons[i].getAttribute("data-id"));
+            });
+        }
+            //default visible sub-icons
         currentActiveIcon = -1;
         makeInactiveInvisible();
     }
@@ -33,7 +41,7 @@ class IconManager {
 
 function makeInactiveInvisible() {
     for (let i = 0; i < icons.length; i++) {
-
+        
         const subIcons = icons[i].querySelectorAll('.sub-icon');
         if (currentActiveIcon === i) {
             for (let i = 0; i < subIcons.length; i++) {
@@ -50,24 +58,13 @@ function makeInactiveInvisible() {
     }
 }
 
-//const fs = require('fs');
-
-function changeIconContent() {
+function changeIconContent(index) {
     const dataId = (icons[currentActiveIcon].getAttribute("data-id"));
     const mainIconId = icons[currentActiveIcon].parentElement.getAttribute("id");
-    openedIconTab.innerText = "";
     
     const currentIconText = iconTexts[mainIconId][dataId];
-    
-    //console.log(currentIconText);
-    for (const id in currentIconText) {
-        openedIconTab.innerText += currentIconText[id];
-    }
+    index = index.slice(2);
+    openedIconTab.innerText = currentIconText[index];
 }
-
-//check if main-icon is clicked
-//check if data-id is already in map
-//if it is, then add icon reference to map[data-id]
-//
 
 export default IconManager;
