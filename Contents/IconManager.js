@@ -36,7 +36,6 @@ function makeInactiveInvisible() {
 
         const subIcons = icons[i].querySelectorAll('.sub-icon');
         if (currentActiveIcon === i) {
-            //console.log(i, currentActiveIcon);
             for (let i = 0; i < subIcons.length; i++) {
                 
                 subIcons[i].style.display = "inline";
@@ -55,9 +54,10 @@ function makeInactiveInvisible() {
 
 function changeIconContent() {
     const dataId = (icons[currentActiveIcon].getAttribute("data-id"));
+    const mainIconId = icons[currentActiveIcon].parentElement.getAttribute("id");
     openedIconTab.innerText = "";
     
-    const currentIconText = iconTexts["information"][dataId];
+    const currentIconText = iconTexts[mainIconId][dataId];
     
     //console.log(currentIconText);
     for (const id in currentIconText) {
