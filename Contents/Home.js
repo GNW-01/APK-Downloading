@@ -7,7 +7,7 @@ class Home extends Buttons{
     click() {
         console.log("HOME button clicked!");
     }
-    }
+}
 
 export default Home;
 
