@@ -1,3 +1,4 @@
-const exampleContent1 = `
-    <label></label>
+export const theRistks = `
+    <label>The Risks</label>
+    <p>hello po</p>
 `
