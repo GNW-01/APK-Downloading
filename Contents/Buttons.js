@@ -40,11 +40,11 @@ export function setTab(openedTab) {
             break;
         case "guide":
             guideTab.style.display = "flex";
-            openedIconTab.style.display = "block";
+            // openedIconTab.style.display = "block";
             break;
         case "information":
             infoTab.style.display = "flex";
-            openedIconTab.style.display = "block";
+            // openedIconTab.style.display = "block";
             break;
         default:
             break;

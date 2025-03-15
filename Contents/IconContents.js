@@ -1,8 +1,3 @@
-export const theRistks = `
-    <label>The Risks</label>
-    <p>hello po</p>
-`;
-
 export const iconTexts = {
     "information": {
       "0": {

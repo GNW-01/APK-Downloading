@@ -5,6 +5,7 @@ const icons = document.querySelectorAll(".main-icon");
 const openedIconTab = document.getElementById("opened-icon-tab");
 const allSubIcons = document.querySelectorAll(".sub-icon");
 
+let currActiveSubIcon = {};
 let currentActiveIcon = 0;
 
 class IconManager {
@@ -64,7 +65,15 @@ function changeIconContent(index) {
     
     const currentIconText = iconTexts[mainIconId][dataId];
     index = index.slice(2);
+    
     openedIconTab.innerText = currentIconText[index];
+    if (currActiveSubIcon == currentIconText[index]) {
+        openedIconTab.style.display = (openedIconTab.style.display === "block") ? "none" : "block";
+    }
+    else {
+        currActiveSubIcon = currentIconText[index];
+        openedIconTab.style.display = "block";
+    }
 }
 
 export default IconManager;
