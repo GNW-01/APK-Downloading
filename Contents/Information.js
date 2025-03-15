@@ -5,6 +5,7 @@ class Information extends Buttons{
     constructor(){
         super("Information", "info-btn");
     }
+    
     click() {
         console.log("Information button clicked!");
         setTab("information");
