@@ -1,7 +1,15 @@
-const homeBtn = document.getElementById("homeBtn");
+import Buttons from "Buttons.js";
 
-homeBtn.addEventListener('click', () => {
-    //make current tab invisible
-    //make hometab visible 
-    //all done through css
-})
+class Home extends Buttons{
+    constructor(){
+        super();
+    }
+    const homeBtn = document.getElementById("home-btn");
+    homeBtn.onclick = function() {
+        console.log("hello wordl");
+    }
+}
+
+
+
+
