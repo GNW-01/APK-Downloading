@@ -30,11 +30,11 @@ class IconManager {
 
         for (let i = 0; i < allSubIcons.length; i++) {
             allSubIcons[i].addEventListener('click', () => {
-                
+                //update the opened-icon-tab
                 changeIconContent(allSubIcons[i].getAttribute("data-id"));
             });
         }
-            //default visible sub-icons
+        //default visible sub-icons
         currentActiveIcon = -1;
         makeInactiveInvisible();
     }
@@ -46,13 +46,13 @@ function makeInactiveInvisible() {
         const subIcons = icons[i].querySelectorAll('.sub-icon');
         if (currentActiveIcon === i) {
             for (let i = 0; i < subIcons.length; i++) {
-                
+                //set all sub-icons for active mainicon to be visible
                 subIcons[i].style.display = "inline";
             }
         }
         else {
             for (let i = 0; i < subIcons.length; i++) {
-                
+                //set sub-icons invisible
                 subIcons[i].style.display = "none";
             }
         }
@@ -64,9 +64,12 @@ function changeIconContent(index) {
     const mainIconId = icons[currentActiveIcon].parentElement.getAttribute("id");
     
     const currentIconText = iconTexts[mainIconId][dataId];
-    index = index.slice(2);
+    index = index.slice(2); //to get only the last index of string
     
     openedIconTab.innerText = currentIconText[index];
+
+    //check if same sub-icon is clicked twice
+    //if so, make it either invisible or visible
     if (currActiveSubIcon == currentIconText[index]) {
         openedIconTab.style.display = (openedIconTab.style.display === "block") ? "none" : "block";
     }
