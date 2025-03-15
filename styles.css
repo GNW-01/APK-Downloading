@@ -26,7 +26,7 @@ body {
 #tabs-container {
     background-color: blue;
     width: 90%;
-    height: 200px;
+    height: auto;
     margin: 10px 0;
     padding: 20px;
     display: flex;
@@ -46,8 +46,16 @@ body {
     background-color: palegoldenrod;
     border-radius: 10px;
     width: 100%;
-    height: 200px;
+    height: auto;
     display: flex;
+}
+
+.directory-tab {
+    display: flex;
+    min-height: 200px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 #opened-icon-tab {
