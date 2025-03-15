@@ -1,4 +1,5 @@
 import Buttons from "./buttons.js";
+import { setTab } from "./buttons.js";
 
 class Home extends Buttons{
     constructor(){
@@ -6,6 +7,7 @@ class Home extends Buttons{
     }
     click() {
         console.log("HOME button clicked!");
+        setTab("home");
     }
 }
 
