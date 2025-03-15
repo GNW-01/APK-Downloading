@@ -70,3 +70,16 @@ body {
     background-color: green;
 }
 
+.directory-tab {
+    display: flex;
+    gap: 20px;
+    justify-content:  space-between;
+    padding: 20px;
+}
+
+.icon {
+    width: 100px;
+    height: 100px;
+    background-color: grey;
+}
+
