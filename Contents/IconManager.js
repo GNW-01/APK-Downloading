@@ -21,6 +21,9 @@ class IconManager {
                 makeInactiveInvisible(i);
             })
         }
+        //default visible sub-icons
+        currentActiveIcon = -1;
+        makeInactiveInvisible();
     }
 }
 
@@ -31,6 +34,7 @@ function makeInactiveInvisible() {
         // }
         const subIcons = icons[i].querySelectorAll('.sub-icon');
         if (currentActiveIcon === i) {
+            console.log(i, currentActiveIcon);
             for (let i = 0; i < subIcons.length; i++) {
                 
                 subIcons[i].style.display = "inline";
