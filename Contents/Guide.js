@@ -7,6 +7,6 @@ class Guide extends Buttons{
     click() {
         console.log("Guide button clicked!");
     }
-    } 
+} 
 
 export default Guide;
