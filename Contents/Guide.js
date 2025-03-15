@@ -1,5 +1,5 @@
-import Buttons from "./buttons.js";
-import { setTab } from "./buttons.js";
+import Buttons from "./Buttons.js";
+import { setTab } from "./Buttons.js";
 
 class Guide extends Buttons{
     constructor(){

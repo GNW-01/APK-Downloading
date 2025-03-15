@@ -1,5 +1,5 @@
-import Home from "./home.js";
-import Guide from "./guide.js";
+import Home from "./Home.js";
+import Guide from "./Guide.js";
 import Information from "./Information.js";
 import { setTab } from "./Buttons.js";
 
