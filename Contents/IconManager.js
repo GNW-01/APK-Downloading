@@ -1,5 +1,8 @@
+import { iconTexts } from "./IconContents.js";
+
 //find all the icons with class icon
 const icons = document.querySelectorAll(".main-icon");
+const openedIconTab = document.getElementById("opened-icon-tab");
 
 let currentActiveIcon = 0;
 
@@ -16,9 +19,10 @@ class IconManager {
         //loop through all icons and add click event
         for (let i = 0; i < icons.length; i++) {
             icons[i].addEventListener('click', () => {
-                console.log("clicked icon-" + i);
+                //console.log("clicked icon-" + i);
                 currentActiveIcon = i;
                 makeInactiveInvisible(i);
+                changeIconContent();
             })
         }
         //default visible sub-icons
@@ -29,12 +33,10 @@ class IconManager {
 
 function makeInactiveInvisible() {
     for (let i = 0; i < icons.length; i++) {
-        // if (i === currentActiveIcon) {
-        //     continue;
-        // }
+
         const subIcons = icons[i].querySelectorAll('.sub-icon');
         if (currentActiveIcon === i) {
-            console.log(i, currentActiveIcon);
+            //console.log(i, currentActiveIcon);
             for (let i = 0; i < subIcons.length; i++) {
                 
                 subIcons[i].style.display = "inline";
@@ -46,6 +48,20 @@ function makeInactiveInvisible() {
                 subIcons[i].style.display = "none";
             }
         }
+    }
+}
+
+//const fs = require('fs');
+
+function changeIconContent() {
+    const dataId = (icons[currentActiveIcon].getAttribute("data-id"));
+    openedIconTab.innerText = "";
+    
+    const currentIconText = iconTexts["information"][dataId];
+    
+    console.log(currentIconText);
+    for (const id in currentIconText) {
+        openedIconTab.innerText += currentIconText[id];
     }
 }
 
