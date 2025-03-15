@@ -59,7 +59,7 @@ function changeIconContent() {
     
     const currentIconText = iconTexts["information"][dataId];
     
-    console.log(currentIconText);
+    //console.log(currentIconText);
     for (const id in currentIconText) {
         openedIconTab.innerText += currentIconText[id];
     }
