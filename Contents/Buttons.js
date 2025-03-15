@@ -21,14 +21,17 @@
 export default Buttons;
 
 export function setTab(openedTab) {
+    //initialize tabs
     const homeTab = document.getElementById("home");
     const guideTab = document.getElementById("guide");
     const infoTab = document.getElementById("information");
 
+    //set all tabs invisible
     homeTab.style.display = "none";
     guideTab.style.display = "none";
     infoTab.style.display = "none";
 
+    //set the selected tab visible
     switch (openedTab) {
         case "home":
             homeTab.style.display = "flex";
