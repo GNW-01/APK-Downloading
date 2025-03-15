@@ -1,14 +1,15 @@
-import Buttons from "Buttons.js";
+import Buttons from "./buttons.js";
 
 class Home extends Buttons{
     constructor(){
-        super();
+        super("Home", "home-btn");
     }
-    const homeBtn = document.getElementById("home-btn");
-    homeBtn.onclick = function() {
-        console.log("hello wordl");
+    click() {
+        console.log("HOME button clicked!");
     }
-}
+    }
+
+export default Home;
 
 
 

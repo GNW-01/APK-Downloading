@@ -1,7 +1,9 @@
-const homeBtn = document.getElementById("home-btn");
-import Home from './Home.js';
-import Guide from './Guide.js';
-import Information from './Information.js';
-homeBtn.onclick = function() {
-    console.log("hello wordl");
-}
+import Home from "./home.js";
+import Guide from "./guide.js";
+import Information from "./Information.js";
+
+document.addEventListener("DOMContentLoaded", () => {
+    new Home();
+    new Guide();
+    new Information();
+});
