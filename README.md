@@ -1,2 +1,1 @@
-
-change 
+This website aims to share information regarding apk downloading.
