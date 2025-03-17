@@ -5,7 +5,7 @@ const icons = document.querySelectorAll(".main-icon");
 const openedIconTab = document.getElementById("opened-icon-tab");
 const allSubIcons = document.querySelectorAll(".sub-icon");
 
-let currActiveSubIcon = {};
+let currActiveSubIcon;
 let currentActiveIcon = 0;
 
 class IconManager {
@@ -65,6 +65,7 @@ function changeIconContent(index) {
     
     const currentIconText = iconTexts[mainIconId][dataId];
     index = index.slice(2); //to get only the last index of string
+    //kasi ang nilagay mong dataid ay 0-1, 0-2 etc. ay ang need ko lang ay yung 1 or 2
     
     openedIconTab.innerText = currentIconText[index];
 
