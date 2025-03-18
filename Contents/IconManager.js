@@ -7,6 +7,7 @@ const allSubIcons = document.querySelectorAll(".sub-icon");
 
 let currActiveSubIcon;
 let currentActiveIcon = 0;
+let smallWindow = false;
 
 class IconManager {
     constructor(label, content) {
@@ -59,6 +60,21 @@ function makeInactiveInvisible() {
     }
 }
 
+window.onresize = () => {
+    if (window.innerWidth < 700) {
+        if (!smallWindow) {
+            openedIconTab.style.display = "none";
+        }
+        smallWindow = true;
+    }
+    else {
+        if (smallWindow) {
+            openedIconTab.style.display = "block";
+        }
+        smallWindow = false;
+    }
+}
+
 function changeIconContent(index) {
     const dataId = (icons[currentActiveIcon].getAttribute("data-id"));
     const mainIconId = icons[currentActiveIcon].parentElement.getAttribute("id");
@@ -71,12 +87,14 @@ function changeIconContent(index) {
 
     //check if same sub-icon is clicked twice
     //if so, make it either invisible or visible
-    if (currActiveSubIcon == currentIconText[index]) {
-        openedIconTab.style.display = (openedIconTab.style.display === "block") ? "none" : "block";
-    }
-    else {
-        currActiveSubIcon = currentIconText[index];
-        openedIconTab.style.display = "block";
+    if (smallWindow) {
+        if (currActiveSubIcon == currentIconText[index]) {
+            openedIconTab.style.display = (openedIconTab.style.display === "block") ? "none" : "block";
+        }
+        else {
+            currActiveSubIcon = currentIconText[index];
+            openedIconTab.style.display = "block";
+        }
     }
 }
 
