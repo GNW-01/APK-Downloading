@@ -22,13 +22,12 @@ class IconManager {
         //loop through all icons and add click event
         for (let i = 0; i < icons.length; i++) {
             icons[i].addEventListener('click', () => {
-                //console.log("clicked icon-" + i);
                 currentActiveIcon = i;
                 makeInactiveInvisible(i);
-                //changeIconContent();
             })
         }
 
+        //all unselected sub-icons are insvisible
         for (let i = 0; i < allSubIcons.length; i++) {
             allSubIcons[i].addEventListener('click', () => {
                 //update the opened-icon-tab
