@@ -3,8 +3,9 @@
 }
 
 body {
-    background-color: pink;
+    background: linear-gradient(to bottom, #4A90E2, #8E44AD); 
     margin: 0 0;
+    min-height: 100vh;
 }
 
 #main {
@@ -12,6 +13,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    
 }
 
 #main > header {
@@ -24,7 +26,6 @@ body {
 }
 
 #tabs-container {
-    background-color: blue;
     width: 90%;
     height: auto;
     margin: 10px 0;
@@ -40,17 +41,26 @@ body {
     gap: 10px;
     margin-right: auto;
     margin-left: 10px;
+    background: linear-gradient(to right, #6A11CB, #2575FC);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
 }
 
 #directory-container {
-    background-color: palegoldenrod;
+    background-color:rgba(44, 62, 80, 0.4);
     border-radius: 10px;
     width: 100%;
     height: auto;
     display: flex;
+    font-family: "Trebuchet MS", "Arial", sans-serif;
+    color: white;
 }
 
 .directory-tab {
+    
     display: flex;
     min-height: 200px;
     flex-direction: row;
@@ -67,21 +77,29 @@ body {
     width: 100%;
     height: 100%;
     border-radius: inherit;
-    background-color: aqua;
+    color: #fff; 
+    background-color: #1E1E2F;
+}
+
+#home > p {
+    margin-bottom: 0px;
+    line-height: 1.4;
+    font-weight: 600;
+    font-family: "Trebuchet MS", "Arial", sans-serif;
 }
 
 #guide {
     width: 100%;
     height: 100%;
     border-radius: inherit;
-    background-color: yellow;
+    background-color: #1E1E2F;
 }
 
 #information {
     width: 100%;
     height: 100%;
     border-radius: inherit;
-    background-color: green;
+    background-color: #1E1E2F;
 }
 
 .directory-tab {
@@ -129,5 +147,13 @@ body {
     height: 20px;
     background-color: brown;
     border-radius: 5px;
+}
+
+button:hover {
+    background: linear-gradient(to right, #2575FC, #6A11CB);
+}
+
+button {
+    font-family: "Trebuchet MS", "Arial", sans-serif;
 }
 
