@@ -3,13 +3,13 @@ import { setTab } from "./Buttons.js";
 
 class Information extends Buttons{
     constructor(){
-        super("Information", "info-btn");
+        super("information", "info-btn");
     }
     
-    click() {
-        console.log("Information button clicked!");
-        setTab("information");
-    }
+    // click() {
+    //     console.log("Information button clicked!");
+    //     setTab("information");
+    // }
 }
 
 export default Information;

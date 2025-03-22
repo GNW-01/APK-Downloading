@@ -20,7 +20,8 @@
     }
 
     click() {
-        console.log(`${this.label} button clicked!`);
+        console.log(`${this.label} button clicked!asdf`);
+        setTab(this.label);
     }
 
     setUniversalCurrTab() {

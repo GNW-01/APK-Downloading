@@ -61,7 +61,7 @@ function makeInactiveInvisible() {
 
 window.onresize = () => {
     let currActiveTab = sessionStorage.getItem("current-active-tab");
-    
+    console.log(currActiveTab);
     if (currActiveTab === "home") {
         return;
     }
