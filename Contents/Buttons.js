@@ -55,16 +55,31 @@ export function setTab(openedTab) {
         case "home":
             homeTab.style.display = "flex";
             openedIconTab.style.display = "none";
+            setButtonHighlight("home");
             break;
         case "guide":
             guideTab.style.display = "flex";
             openedIconTab.style.display = "block";
+            setButtonHighlight("guide");
             break;
         case "information":
             infoTab.style.display = "flex";
             openedIconTab.style.display = "block";
+            setButtonHighlight("info");
             break;
         default:
             break;
     }
+}
+
+function setButtonHighlight(btnName) {
+    const btns = document.querySelectorAll('.nav-btn');
+    console.log(btns);
+    for (let i = 0; i < btns.length; i++) {
+        console.log("happened");
+        const btn = btns[i];
+        btn.style.boxShadow = "none";
+    }
+    const highlightedBtn = document.getElementById(`${btnName}-btn`);
+    highlightedBtn.style.boxShadow = "0 0 4px 2px black";
 }
