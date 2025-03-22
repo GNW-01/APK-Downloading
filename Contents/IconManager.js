@@ -7,6 +7,7 @@ const allSubIcons = document.querySelectorAll(".sub-icon");
 
 let currActiveSubIcon;
 let currentActiveIcon = 0;
+let smallWindow = false;
 
 class IconManager {
     constructor(label, content) {
@@ -21,13 +22,12 @@ class IconManager {
         //loop through all icons and add click event
         for (let i = 0; i < icons.length; i++) {
             icons[i].addEventListener('click', () => {
-                //console.log("clicked icon-" + i);
                 currentActiveIcon = i;
                 makeInactiveInvisible(i);
-                //changeIconContent();
             })
         }
 
+        //all unselected sub-icons are insvisible
         for (let i = 0; i < allSubIcons.length; i++) {
             allSubIcons[i].addEventListener('click', () => {
                 //update the opened-icon-tab
@@ -59,6 +59,21 @@ function makeInactiveInvisible() {
     }
 }
 
+window.onresize = () => {
+    if (window.innerWidth < 700) {
+        if (!smallWindow) {
+            openedIconTab.style.display = "none";
+        }
+        smallWindow = true;
+    }
+    else {
+        if (smallWindow) {
+            openedIconTab.style.display = "block";
+        }
+        smallWindow = false;
+    }
+}
+
 function changeIconContent(index) {
     const dataId = (icons[currentActiveIcon].getAttribute("data-id"));
     const mainIconId = icons[currentActiveIcon].parentElement.getAttribute("id");
@@ -71,12 +86,14 @@ function changeIconContent(index) {
 
     //check if same sub-icon is clicked twice
     //if so, make it either invisible or visible
-    if (currActiveSubIcon == currentIconText[index]) {
-        openedIconTab.style.display = (openedIconTab.style.display === "block") ? "none" : "block";
-    }
-    else {
-        currActiveSubIcon = currentIconText[index];
-        openedIconTab.style.display = "block";
+    if (smallWindow) {
+        if (currActiveSubIcon == currentIconText[index]) {
+            openedIconTab.style.display = (openedIconTab.style.display === "block") ? "none" : "block";
+        }
+        else {
+            currActiveSubIcon = currentIconText[index];
+            openedIconTab.style.display = "block";
+        }
     }
 }
 

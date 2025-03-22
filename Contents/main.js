@@ -9,7 +9,6 @@ document.addEventListener("DOMContentLoaded", () => {
     new Guide();
     new Information();
     new IconManager();
+    //set the home tab as the default tab
+    setTab("home");
 });
-
-//set the home tab as the default tab
-setTab("home");
