@@ -131,7 +131,3 @@ body {
     border-radius: 5px;
 }
 
-main {
-    pointer-events: none;
-    user-select: none;
-}
