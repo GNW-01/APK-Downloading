@@ -60,6 +60,11 @@ function makeInactiveInvisible() {
 }
 
 window.onresize = () => {
+    let currActiveTab = sessionStorage.getItem("current-active-tab");
+    
+    if (currActiveTab === "home") {
+        return;
+    }
     if (window.innerWidth < 700) {
         if (!smallWindow) {
             openedIconTab.style.display = "none";

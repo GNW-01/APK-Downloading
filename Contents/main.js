@@ -12,3 +12,6 @@ document.addEventListener("DOMContentLoaded", () => {
     //set the home tab as the default tab
     setTab("home");
 });
+
+let currActiveTab = "home";
+sessionStorage.setItem("current-active-tab", currActiveTab);

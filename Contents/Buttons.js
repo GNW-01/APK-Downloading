@@ -1,13 +1,19 @@
     //make current tab invisible
     //make hometab visible 
     //all done through css
+
+    
  class Buttons{
     constructor(label, buttonId) {
         this.label = label;
         this.button = document.getElementById(buttonId);
+        this.currActiveTab = sessionStorage.getItem("current-active-tab");
 
         if (this.button) {
-            this.button.addEventListener("click", () => this.click());
+            this.button.addEventListener("click", () => {
+                this.click();
+                this.setUniversalCurrTab();
+            });
         } else {
             console.error(`Button with ID '${buttonId}' not found!`);
         }
@@ -15,6 +21,14 @@
 
     click() {
         console.log(`${this.label} button clicked!`);
+    }
+
+    setUniversalCurrTab() {
+        if (!this.currActiveTab) {
+            return;
+        }
+        this.currActiveTab = `${this.label}`;
+        sessionStorage.setItem("current-active-tab", this.currActiveTab);
     }
 }
 
