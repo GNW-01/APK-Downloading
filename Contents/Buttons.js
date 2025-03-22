@@ -74,12 +74,12 @@ export function setTab(openedTab) {
 
 function setButtonHighlight(btnName) {
     const btns = document.querySelectorAll('.nav-btn');
-    console.log(btns);
     for (let i = 0; i < btns.length; i++) {
-        console.log("happened");
         const btn = btns[i];
-        btn.style.boxShadow = "none";
+        // btn.style.boxShadow = "none";
+        btn.style.background = "";
     }
     const highlightedBtn = document.getElementById(`${btnName}-btn`);
-    highlightedBtn.style.boxShadow = "0 0 4px 2px black";
+    // highlightedBtn.style.boxShadow = "0 0 4px 2px black";
+    highlightedBtn.style.background = "linear-gradient(to right, #2575FC, #6A11CB)";
 }
