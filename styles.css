@@ -113,11 +113,13 @@ body {
     width: 100px;
     height: 100px;
     background-color: grey;
+    border-radius: 15px;
 }
 
 .sub-icon {
     width: 20px;
     height: 20px;
     background-color: brown;
+    border-radius: 5px;
 }
 
