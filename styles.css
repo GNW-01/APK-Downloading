@@ -121,7 +121,7 @@ body {
     position: absolute;
     top: calc(50% - 15px);
     transform: translateY(-50%);
-    transform: rotate(-60deg);
+    transform: rotate(+60deg);
     width: 40px;
     height: 10px;
     background-color: rgb(84, 104, 127);
@@ -130,7 +130,7 @@ body {
     position: absolute;
     top: calc(50% + 15px);
     transform: translateY(-50%);
-    transform: rotate(60deg);
+    transform: rotate(-60deg);
     width: 40px;
     height: 10px;
     background-color: rgb(84, 104, 127);

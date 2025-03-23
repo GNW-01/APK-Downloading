@@ -112,6 +112,8 @@ function changeIconContent(index) {
             openedIconTab.style.display = "block";
         }
     }
+
+    changeArrowHead();
 }
 
 export default IconManager;
@@ -125,17 +127,26 @@ arrowHead.addEventListener('click', () => {
 
 function changeIconTab() {
     //openedIconTab.style.display = (openedIconTab.style.display === "block") ? "none" : "block";
+    if (openedIconTab.style.display === "block") {
+        openedIconTab.style.display = "none";
+    }
+    else {
+        openedIconTab.style.display = "block";
+    }
+    changeArrowHead();
+}
+changeIconTab();
+
+function changeArrowHead() {
     const arrowTop = document.querySelector(".arrow-top");
     const arrotBot = document.querySelector(".arrow-bottom");
     if (openedIconTab.style.display !== "block") {
-        openedIconTab.style.display = "block";
-        arrowTop.style.transform = "rotate(60deg)";
-        arrotBot.style.transform = "rotate(-60deg)";
-    }
-    else {
-        openedIconTab.style.display = "none";
         arrowTop.style.transform = "rotate(-60deg)";
         arrotBot.style.transform = "rotate(60deg)";
     }
+    else {
+        arrowTop.style.transform = "rotate(60deg)";
+        arrotBot.style.transform = "rotate(-60deg)";
+    }
+    console.log(openedIconTab.style.display);
 }
-changeIconTab();
