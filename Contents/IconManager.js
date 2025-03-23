@@ -70,9 +70,9 @@ function adjustOpenedIconTab() {
     if (currActiveTab === "home") {
         return;
     }
-    if (window.innerWidth < 860) {
+    if (window.innerWidth < 1000) {
         if (!smallWindow) {
-            openedIconTab.style.display = "none";
+            //openedIconTab.style.display = "none";
             openedIconTab.style.position = "absolute";
         }
         smallWindow = true;
@@ -80,7 +80,7 @@ function adjustOpenedIconTab() {
     else {
         if (smallWindow) {
             openedIconTab.style.position = "static";
-            openedIconTab.style.display = "block";
+            // openedIconTab.style.display = "block";
         }
         smallWindow = false;
     }
@@ -95,8 +95,6 @@ function changeIconContent(index) {
     //kasi ang nilagay mong dataid ay 0-1, 0-2 etc. ay ang need ko lang ay yung 1 or 2
 
     setOpenedIconTabContent(currentIconText[index]);
-
-    //openedIconTab.innerText = currentIconText[index];
 
     //check if same sub-icon is clicked twice
     //if so, make it either invisible or visible
@@ -118,3 +116,10 @@ function changeIconContent(index) {
 
 export default IconManager;
 adjustOpenedIconTab();
+
+const arrowHead = document.getElementById("arrowhead-tab-opener");
+
+arrowHead.addEventListener('click', () => {
+    console.log("asdfasdf");
+    openedIconTab.style.display = (openedIconTab.style.display === "block") ? "none" : "block";
+})

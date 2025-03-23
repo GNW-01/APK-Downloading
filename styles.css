@@ -61,6 +61,7 @@ body {
     width: 80vw;
     height: auto;
     display: flex;
+    justify-content: space-between;
     font-family: "Trebuchet MS", "Arial", sans-serif;
     color: white;
     box-shadow: 0 0 5px 0 #1f053b;
@@ -73,9 +74,9 @@ body {
     flex-direction: row;
     flex-wrap: wrap;
     gap: 20px;
-    justify-content:  space-between;
+    justify-content: space-between;
     padding: 20px;
-    width: 100%;
+    width: 70%;
     height: 100%;
     border-radius: inherit;
     background-color: #1E1E2F;
@@ -83,14 +84,14 @@ body {
 }
 
 #opened-icon-tab {
-    width: 400px;
+    width: 450px;
     height: auto;
     flex-shrink: 0;
     padding: 20px;
     background-color: rgba(44, 62, 80);
     border-radius: 10px;
     top: 10px;
-    right: 2vw;
+    right: 50px;
 }
 
 #opened-icon-tab > #content-tab-exit {
@@ -100,6 +101,29 @@ body {
     margin-left: auto;
     background-color: red;
     border-radius: 10px;
+}
+
+#arrowhead-tab-opener {
+    width: 40px;
+    height: inherit;
+    background-color: rgba(44, 62, 80, 0.5);
+    border-radius: inherit;
+    flex-shrink: 0;
+}
+#arrowhead-tab-opener:hover {
+    background-color: rgba(34, 47, 61, 0.5);
+}
+
+@media (max-width: 1010px) {
+    .directory-tab {
+        width: 300px;
+    }
+}
+
+@media (max-width: 550px) {
+    #opened-icon-tab {
+        width: 300px;
+    }
 }
 
 #home {
