@@ -2,6 +2,8 @@
     //make hometab visible 
     //all done through css
 
+import { setOpenedIconTabContent } from "./ContentTabUtils.js";
+
     
  class Buttons{
     constructor(label, buttonId) {
@@ -20,7 +22,7 @@
     }
 
     click() {
-        console.log(`${this.label} button clicked!asdf`);
+        console.log(`${this.label} button clicked!`);
         setTab(this.label);
     }
 
@@ -48,7 +50,8 @@ export function setTab(openedTab) {
 
     const openedIconTab = document.getElementById("opened-icon-tab");
     //reset openedicontab content if switch tabs
-    openedIconTab.innerText = "Walk through all the information!";
+    setOpenedIconTabContent("Walk through all the information!")
+    // openedIconTab.innerText = "Walk through all the information!";
     
     //set the selected tab visible
     switch (openedTab) {

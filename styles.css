@@ -40,7 +40,7 @@ body {
     display: flex;
     gap: 10px;
     margin-right: auto;
-    margin-left: 10px;
+    margin-left: 4%;
     background: linear-gradient(to right, #6A11CB, #2575FC);
     color: white;
     border: none;
@@ -58,28 +58,48 @@ body {
 #directory-container {
     background-color:rgba(44, 62, 80, 0.4);
     border-radius: 10px;
-    width: 100%;
+    width: 80vw;
     height: auto;
     display: flex;
     font-family: "Trebuchet MS", "Arial", sans-serif;
     color: white;
     box-shadow: 0 0 5px 0 #1f053b;
+    gap: 10px;
+    position: relative;
 }
 
 .directory-tab {
-    
     display: flex;
-    min-height: 200px;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-between;
+    gap: 20px;
+    justify-content:  space-between;
+    padding: 20px;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    background-color: #1E1E2F;
     box-shadow: 0 0 5px 0 #1f053b;
 }
 
 #opened-icon-tab {
-    width: 50%;
-    height: 100%;
+    width: 400px;
+    height: auto;
+    flex-shrink: 0;
     padding: 20px;
+    background-color: rgba(44, 62, 80);
+    border-radius: 10px;
+    top: 10px;
+    right: 2vw;
+}
+
+#opened-icon-tab > #content-tab-exit {
+    width: 20px;
+    height: 10px;
+    display: block;
+    margin-left: auto;
+    background-color: red;
+    border-radius: 10px;
 }
 
 #home {
@@ -97,7 +117,7 @@ body {
     font-family: "Trebuchet MS", "Arial", sans-serif;
 }
 
-#guide {
+/* #guide {
     width: 100%;
     height: 100%;
     border-radius: inherit;
@@ -109,14 +129,14 @@ body {
     height: 100%;
     border-radius: inherit;
     background-color: #1E1E2F;
-}
+} */
 
-.directory-tab {
+/* .directory-tab {
     display: flex;
     gap: 20px;
     justify-content:  space-between;
     padding: 20px;
-}
+} */
 
 .main-icon {
     display: flex;
@@ -148,7 +168,6 @@ body {
 }
 
 .icon:hover {
-    background-color: rgb(91, 90, 90);
     box-shadow: 0 0 5px 4px #4f306e;
 }
 
