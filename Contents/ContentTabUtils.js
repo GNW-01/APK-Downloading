@@ -4,13 +4,13 @@ export function setOpenedIconTabContent(content) {
     while (openedIconTab.firstChild) {
         openedIconTab.removeChild(openedIconTab.firstChild)
     }
-    const exitBtn = document.createElement('button');
-    exitBtn.id = "content-tab-exit";
-    openedIconTab.append(exitBtn);
+    // const exitBtn = document.createElement('button');
+    // exitBtn.id = "content-tab-exit";
+    // openedIconTab.append(exitBtn);
     openedIconTab.innerHTML += content.replace(/\n/g, "<br>");
 
-    document.getElementById('content-tab-exit').onclick = () => {
-        openedIconTab.style.display = "none";
-        console.log("exited");
-    }
+    // document.getElementById('content-tab-exit').onclick = () => {
+    //     openedIconTab.style.display = "none";
+    //     console.log("exited");
+    // }
 }

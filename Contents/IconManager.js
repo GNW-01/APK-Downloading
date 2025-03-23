@@ -120,6 +120,22 @@ adjustOpenedIconTab();
 const arrowHead = document.getElementById("arrowhead-tab-opener");
 
 arrowHead.addEventListener('click', () => {
-    console.log("asdfasdf");
-    openedIconTab.style.display = (openedIconTab.style.display === "block") ? "none" : "block";
+    changeIconTab();
 })
+
+function changeIconTab() {
+    //openedIconTab.style.display = (openedIconTab.style.display === "block") ? "none" : "block";
+    const arrowTop = document.querySelector(".arrow-top");
+    const arrotBot = document.querySelector(".arrow-bottom");
+    if (openedIconTab.style.display !== "block") {
+        openedIconTab.style.display = "block";
+        arrowTop.style.transform = "rotate(60deg)";
+        arrotBot.style.transform = "rotate(-60deg)";
+    }
+    else {
+        openedIconTab.style.display = "none";
+        arrowTop.style.transform = "rotate(-60deg)";
+        arrotBot.style.transform = "rotate(60deg)";
+    }
+}
+changeIconTab();

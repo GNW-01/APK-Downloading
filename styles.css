@@ -109,9 +109,31 @@ body {
     background-color: rgba(44, 62, 80, 0.5);
     border-radius: inherit;
     flex-shrink: 0;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 #arrowhead-tab-opener:hover {
     background-color: rgba(34, 47, 61, 0.5);
+}
+.arrow-top {
+    position: absolute;
+    top: calc(50% - 15px);
+    transform: translateY(-50%);
+    transform: rotate(-60deg);
+    width: 40px;
+    height: 10px;
+    background-color: rgb(84, 104, 127);
+}
+.arrow-bottom {
+    position: absolute;
+    top: calc(50% + 15px);
+    transform: translateY(-50%);
+    transform: rotate(60deg);
+    width: 40px;
+    height: 10px;
+    background-color: rgb(84, 104, 127);
 }
 
 @media (max-width: 1010px) {
