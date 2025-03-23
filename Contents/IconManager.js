@@ -1,4 +1,4 @@
-import { setOpenedIconTabContent } from "./ContentTabUtils.js";
+import { setOpenedIconTabContent, openIconTab, changeArrowHead } from "./ContentTabUtils.js";
 import { iconTexts } from "./IconContents.js";
 
 //find all the icons with class icon
@@ -116,37 +116,11 @@ function changeIconContent(index) {
     changeArrowHead();
 }
 
-export default IconManager;
-adjustOpenedIconTab();
-
 const arrowHead = document.getElementById("arrowhead-tab-opener");
-
 arrowHead.addEventListener('click', () => {
-    changeIconTab();
+    openIconTab();
 })
 
-function changeIconTab() {
-    //openedIconTab.style.display = (openedIconTab.style.display === "block") ? "none" : "block";
-    if (openedIconTab.style.display === "block") {
-        openedIconTab.style.display = "none";
-    }
-    else {
-        openedIconTab.style.display = "block";
-    }
-    changeArrowHead();
-}
-changeIconTab();
-
-function changeArrowHead() {
-    const arrowTop = document.querySelector(".arrow-top");
-    const arrotBot = document.querySelector(".arrow-bottom");
-    if (openedIconTab.style.display !== "block") {
-        arrowTop.style.transform = "rotate(-60deg)";
-        arrotBot.style.transform = "rotate(60deg)";
-    }
-    else {
-        arrowTop.style.transform = "rotate(60deg)";
-        arrotBot.style.transform = "rotate(-60deg)";
-    }
-    console.log(openedIconTab.style.display);
-}
+export default IconManager;
+adjustOpenedIconTab();
+openIconTab();

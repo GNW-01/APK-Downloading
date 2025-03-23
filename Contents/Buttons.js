@@ -2,7 +2,7 @@
     //make hometab visible 
     //all done through css
 
-import { setOpenedIconTabContent } from "./ContentTabUtils.js";
+import { arrowHead, changeArrowHead, setOpenedIconTabContent } from "./ContentTabUtils.js";
 
     
  class Buttons{
@@ -49,8 +49,6 @@ export function setTab(openedTab) {
     infoTab.style.display = "none";
 
     const openedIconTab = document.getElementById("opened-icon-tab");
-    //reset openedicontab content if switch tabs
-    setOpenedIconTabContent("Walk through all the information!")
     // openedIconTab.innerText = "Walk through all the information!";
     
     //set the selected tab visible
@@ -59,20 +57,27 @@ export function setTab(openedTab) {
             homeTab.style.display = "flex";
             openedIconTab.style.display = "none";
             setButtonHighlight("home");
+            arrowHead.hide();
             break;
         case "guide":
             guideTab.style.display = "flex";
             openedIconTab.style.display = "block";
             setButtonHighlight("guide");
+            arrowHead.unhide();
             break;
         case "information":
             infoTab.style.display = "flex";
             openedIconTab.style.display = "block";
             setButtonHighlight("info");
+            arrowHead.unhide();
             break;
         default:
             break;
     }
+
+    //reset openedicontab content if switch tabs
+    setOpenedIconTabContent("Walk through all the information!");
+    changeArrowHead();
 }
 
 function setButtonHighlight(btnName) {

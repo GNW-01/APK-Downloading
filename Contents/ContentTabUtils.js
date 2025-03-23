@@ -1,16 +1,38 @@
 
+const openedIconTab = document.getElementById("opened-icon-tab");
 export function setOpenedIconTabContent(content) {
-    const openedIconTab = document.getElementById("opened-icon-tab");
     while (openedIconTab.firstChild) {
         openedIconTab.removeChild(openedIconTab.firstChild)
     }
-    // const exitBtn = document.createElement('button');
-    // exitBtn.id = "content-tab-exit";
-    // openedIconTab.append(exitBtn);
     openedIconTab.innerHTML += content.replace(/\n/g, "<br>");
+}
 
-    // document.getElementById('content-tab-exit').onclick = () => {
-    //     openedIconTab.style.display = "none";
-    //     console.log("exited");
-    // }
+export function openIconTab() {
+    if (openedIconTab.style.display === "block") {
+        openedIconTab.style.display = "none";
+    }
+    else {
+        openedIconTab.style.display = "block";
+    }
+    changeArrowHead();
+}
+
+export function changeArrowHead() {
+    const arrowTop = document.querySelector(".arrow-top");
+    const arrotBot = document.querySelector(".arrow-bottom");
+    if (openedIconTab.style.display !== "block") {
+        arrowTop.style.transform = "rotate(-60deg)";
+        arrotBot.style.transform = "rotate(60deg)";
+    }
+    else {
+        arrowTop.style.transform = "rotate(60deg)";
+        arrotBot.style.transform = "rotate(-60deg)";
+    }
+    console.log(openedIconTab.style.display);
+}
+
+export const arrowHead = {
+    element: document.getElementById("arrowhead-tab-opener"),
+    unhide() {this.element.style.display = ""},
+    hide() {this.element.style.display = "none"}
 }
