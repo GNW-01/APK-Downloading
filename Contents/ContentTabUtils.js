@@ -1,4 +1,3 @@
-
 const openedIconTab = document.getElementById("opened-icon-tab");
 export function setOpenedIconTabContent(content) {
     while (openedIconTab.firstChild) {
