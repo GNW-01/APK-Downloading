@@ -70,7 +70,7 @@ function adjustOpenedIconTab() {
     if (currActiveTab === "home") {
         return;
     }
-    if (window.innerWidth < 1000) {
+    if (window.innerWidth < 1100) {
         if (!smallWindow) {
             //openedIconTab.style.display = "none";
             openedIconTab.style.position = "absolute";
