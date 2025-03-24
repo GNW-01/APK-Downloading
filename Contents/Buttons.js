@@ -2,7 +2,7 @@
     //make hometab visible 
     //all done through css
 
-import { arrowHead, changeArrowHead, setOpenedIconTabContent } from "./ContentTabUtils.js";
+import { arrowHead, changeArrowHead, iconTab, setOpenedIconTabContent } from "./ContentTabUtils.js";
 
     
  class Buttons{
@@ -55,20 +55,20 @@ export function setTab(openedTab) {
     switch (openedTab) {
         case "home":
             homeTab.style.display = "flex";
-            openedIconTab.style.display = "none";
             setButtonHighlight("home");
+            iconTab.hide();
             arrowHead.hide();
             break;
         case "guide":
             guideTab.style.display = "flex";
-            openedIconTab.style.display = "block";
             setButtonHighlight("guide");
+            iconTab.unhide();
             arrowHead.unhide();
             break;
         case "information":
             infoTab.style.display = "flex";
-            openedIconTab.style.display = "block";
             setButtonHighlight("info");
+            iconTab.unhide();
             arrowHead.unhide();
             break;
         default:

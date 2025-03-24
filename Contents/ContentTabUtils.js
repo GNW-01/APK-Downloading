@@ -7,11 +7,17 @@ export function setOpenedIconTabContent(content) {
 }
 
 export function openIconTab() {
-    if (openedIconTab.style.display === "block") {
-        openedIconTab.style.display = "none";
+    // if (openedIconTab.style.display === "block") {
+    //     openedIconTab.style.display = "none";
+    // }
+    // else {
+    //     openedIconTab.style.display = "block";
+    // }
+    if (iconTab.ishidden) {
+        iconTab.unhide();
     }
     else {
-        openedIconTab.style.display = "block";
+        iconTab.hide();
     }
     changeArrowHead();
 }
@@ -19,7 +25,7 @@ export function openIconTab() {
 export function changeArrowHead() {
     const arrowTop = document.querySelector(".arrow-top");
     const arrotBot = document.querySelector(".arrow-bottom");
-    if (openedIconTab.style.display !== "block") {
+    if (iconTab.ishidden) {
         arrowTop.style.transform = "rotate(-60deg)";
         arrotBot.style.transform = "rotate(60deg)";
     }
@@ -27,11 +33,17 @@ export function changeArrowHead() {
         arrowTop.style.transform = "rotate(60deg)";
         arrotBot.style.transform = "rotate(-60deg)";
     }
-    console.log(openedIconTab.style.display);
 }
 
 export const arrowHead = {
     element: document.getElementById("arrowhead-tab-opener"),
     unhide() {this.element.style.display = ""},
     hide() {this.element.style.display = "none"}
+}
+
+export const iconTab = {
+    element: document.getElementById("opened-icon-tab"),
+    unhide() {this.element.style.display = "block"},
+    hide() {this.element.style.display = "none"},
+    get ishidden() {return this.element.style.display === "none"}
 }
