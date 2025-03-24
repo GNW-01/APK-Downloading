@@ -1,3 +1,4 @@
+import { setOpenedIconTabContent, openIconTab, changeArrowHead } from "./ContentTabUtils.js";
 import { iconTexts } from "./IconContents.js";
 
 //find all the icons with class icon
@@ -60,20 +61,26 @@ function makeInactiveInvisible() {
 }
 
 window.onresize = () => {
+    adjustOpenedIconTab();
+}
+
+function adjustOpenedIconTab() {
     let currActiveTab = sessionStorage.getItem("current-active-tab");
     console.log(currActiveTab);
     if (currActiveTab === "home") {
         return;
     }
-    if (window.innerWidth < 700) {
+    if (window.innerWidth < 1000) {
         if (!smallWindow) {
-            openedIconTab.style.display = "none";
+            //openedIconTab.style.display = "none";
+            openedIconTab.style.position = "absolute";
         }
         smallWindow = true;
     }
     else {
         if (smallWindow) {
-            openedIconTab.style.display = "block";
+            openedIconTab.style.position = "static";
+            // openedIconTab.style.display = "block";
         }
         smallWindow = false;
     }
@@ -86,8 +93,8 @@ function changeIconContent(index) {
     const currentIconText = iconTexts[mainIconId][dataId];
     index = index.slice(2); //to get only the last index of string
     //kasi ang nilagay mong dataid ay 0-1, 0-2 etc. ay ang need ko lang ay yung 1 or 2
-    
-    openedIconTab.innerText = currentIconText[index];
+
+    setOpenedIconTabContent(currentIconText[index]);
 
     //check if same sub-icon is clicked twice
     //if so, make it either invisible or visible
@@ -100,6 +107,20 @@ function changeIconContent(index) {
             openedIconTab.style.display = "block";
         }
     }
+    else {
+        if (openedIconTab.style.display = "none") {
+            openedIconTab.style.display = "block";
+        }
+    }
+
+    changeArrowHead();
 }
 
+const arrowHead = document.getElementById("arrowhead-tab-opener");
+arrowHead.addEventListener('click', () => {
+    openIconTab();
+})
+
 export default IconManager;
+adjustOpenedIconTab();
+openIconTab();
