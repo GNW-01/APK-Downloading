@@ -3,14 +3,15 @@
     //all done through css
 
 import { arrowHead, changeArrowHead, iconTab, setOpenedIconTabContent } from "./ContentTabUtils.js";
-
+const clicksound = new Audio("./assets/sound/mixkit-modern-technology-select-3124.wav");
+const selectall = document.getElementById("tabs-container");
     
  class Buttons{
     constructor(label, buttonId) {
         this.label = label;
         this.button = document.getElementById(buttonId);
         this.currActiveTab = sessionStorage.getItem("current-active-tab");
-
+        
         if (this.button) {
             this.button.addEventListener("click", () => {
                 this.click();
@@ -19,6 +20,14 @@ import { arrowHead, changeArrowHead, iconTab, setOpenedIconTabContent } from "./
         } else {
             console.error(`Button with ID '${buttonId}' not found!`);
         }
+
+        selectall.addEventListener("click", this.playsound);
+    }
+
+    playsound() {
+        clicksound.currentTime = 0;
+        clicksound.play();
+        console.log("sound played");
     }
 
     click() {
@@ -91,3 +100,5 @@ function setButtonHighlight(btnName) {
     // highlightedBtn.style.boxShadow = "0 0 4px 2px black";
     highlightedBtn.style.background = "linear-gradient(to right, #2575FC, #6A11CB)";
 }
+
+
